@@ -427,6 +427,10 @@ module.exports = {
   acceptAccess: async () => {
     const notificationPage = await puppeteer.switchToMetamaskNotification();
     await puppeteer.waitAndClick(
+      notificationPageElements.acceptAllCheckbox,
+      notificationPage,
+    );
+    await puppeteer.waitAndClick(
       notificationPageElements.nextButton,
       notificationPage,
     );
