@@ -163,6 +163,8 @@ module.exports = {
     await switchToMetamaskIfNotActive();
 
     await puppeteer.waitAndClick(mainPageElements.accountMenu.button);
+    await puppeteer.metamaskWindow().waitForTimeout(1000);
+    await puppeteer.waitAndClick(mainPageElements.accountMenu.button);
 
     if (typeof accountNameOrAccountNumber === 'number') {
       await puppeteer.waitAndClick(
